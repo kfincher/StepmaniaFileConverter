@@ -97,7 +97,7 @@ public class StepmaniaFileConverter extends javax.swing.JFrame {
         songTitle.setText("Title");
 
         imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageLabel.setIcon(new javax.swing.ImageIcon("D:\\Programs\\Java fun\\Stepmania\\Note Randomizer v2\\File Reader\\ImagePlaceHolder.png")); // NOI18N
+        imageLabel.setIcon(new javax.swing.ImageIcon("D:\\Programs\\Java fun\\Stepmania\\Note Randomizer v2\\Final\\File Reader\\ImagePlaceHolder.png")); // NOI18N
 
         currSongSelection.setEditable(false);
         currSongSelection.setColumns(20);
@@ -202,9 +202,9 @@ public class StepmaniaFileConverter extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addComponent(songTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imageLabel)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(imageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(77, 77, 77)
