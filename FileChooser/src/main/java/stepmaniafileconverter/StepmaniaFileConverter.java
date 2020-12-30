@@ -257,7 +257,7 @@ public class StepmaniaFileConverter extends javax.swing.JFrame {
             a[0] = stepFile.getAbsolutePath();
             job.main.chart.clear();
             job.mainConvert(a);
-         
+            choice = 0; 
             updateInfo();
             messageLabel.setText("File successfully loaded!");
             String filePath = findActualPath(stepFile.getAbsolutePath())+job.main.banner;

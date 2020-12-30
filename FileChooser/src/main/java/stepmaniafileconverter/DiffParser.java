@@ -99,8 +99,11 @@ public class DiffParser {
 				}
 				
 				if(status == "Starting Notes"){
-					main.chart.add(new Diff());
-					status = "Getting Notes";
+						if(line.length()>0)
+							if(line.charAt(0)=='/'){
+								main.chart.add(new Diff());
+								status = "Getting Notes";
+							}
 				}
 				
 				if(status == "Getting Notes"){
