@@ -40,6 +40,42 @@ public class Index{
 	// go into placer function and set array equal to return value
 	// return array file
 
+	public static char[] notesPossible = {'1','2','3','4'};
+	public static double[] notePossibilities = {2,2,2,2};
+	// find relevant index given char
+	public static int findProbability(char in){
+		for(int i = 0;i<notesPossible.length;i++){
+			if(in == notesPossible[i])
+				return i;
+		}
+		return -1;
+	}
+	public static void changeProb(int index){
+		for(int i = 0;i<notePossibilities.length;i++){
+			if(i==index)
+				notePossibilities[i] -= -0.09;
+			else
+				notePossibilities[i] += 0.03;
+		}
+	}
+	public static char probability(char[] in, double[] prob){
+		double sum = 0;
+		double[] temp = new double[prob.length];
+		for(int i = 0;i< in.length;i++){
+			sum+=prob[findProbability(in[i])];
+			temp[i] = sum;
+		}
+		double randProb = Math.random()*sum; // normalizing max to sum;
+		System.out.println(randProb);
+		for(int i = 0;i< in.length;i++){
+			if(randProb<temp[i]){
+				changeProb(findProbability(in[i]));
+				return in[i];
+			}
+		}
+		return '1';
+	}
+	
 	// checkNextAvail
 	// based on hand and currLane, return available options
 	// To-Do: Make 1&4 twice as likely to increase hand swapped
@@ -79,7 +115,7 @@ public class Index{
 				ready = new char[]{'1','2','3'};
 			}
 		}		
-		return ready[random];
+		return probability(ready,notePossibilities);
 	}
 	
 	public static void printNotes(){
