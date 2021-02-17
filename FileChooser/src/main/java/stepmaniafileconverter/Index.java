@@ -51,11 +51,18 @@ public class Index{
 		return -1;
 	}
 	public static void changeProb(int index){
+		double amt = 0.9; // this seems to work pretty well in preventing it from being to anchory or spreaded
 		for(int i = 0;i<notePossibilities.length;i++){
+			System.out.println((i+1)+" is currently: "+notePossibilities[i]);
 			if(i==index)
-				notePossibilities[i] -= -0.09;
+				notePossibilities[i] -= amt;
 			else
-				notePossibilities[i] += 0.03;
+				notePossibilities[i] += amt/3;
+			
+			// catches probabilities that may go negative;
+			if(notePossibilities[i]<=0){
+				notePossibilities[i] += 1;
+			}
 		}
 	}
 	public static char probability(char[] in, double[] prob){
