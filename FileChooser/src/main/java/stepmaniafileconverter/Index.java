@@ -1,35 +1,10 @@
+
 package stepmaniafileconverter;
 // 1: regular note
 // 2: hold start
 // 3: hold end
 // M: mine
 // K: placeholder hold mid
-
-/*
-Holds type-up:
-Approach #1:
-Look for a hold start (if there are multiple on a line, choose the shortest one), 
-Using this, find the length of the hold, placing K's along the way. 
-Upon randomizing the position of the notes, queue the position of the 2, so that the K's and 3's can be placed
-
-Problems:
-In the case of the following:
-0202
-0300
-0003
-3 will be added twice, with only one 2 added
-How this could be solved is to have a global bool that says when a 2 has been added, that prevents Ks, 2s, and 3s, from being added unnecessarily
-
-So new plan:
-Approach #2:
-Straight up ignore 2s and 3s on the first run through of the singularize
-Instead, before singularizing, run a function that will find a 2, and then erase all other 2s until it finds a 3
-Once it finds a 3, delete all 3s until it finds another 2, and so forth
-
-9/12/2019
-Current problem:
-Randomize notes currently only looks for ones and doesn't know to account for Ks
-*/
 
 import java.io.*;
 import java.util.*;

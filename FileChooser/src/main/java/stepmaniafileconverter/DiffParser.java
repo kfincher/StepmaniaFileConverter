@@ -1,3 +1,6 @@
+//////////////////////////////////
+// DiffParser.Java
+// Contains the main functions for storing songs and converting them
 package stepmaniafileconverter;
 
 
