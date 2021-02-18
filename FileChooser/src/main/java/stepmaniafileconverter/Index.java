@@ -51,9 +51,8 @@ public class Index{
 		return -1;
 	}
 	public static void changeProb(int index){
-		double amt = 0.9; // this seems to work pretty well in preventing it from being to anchory or spreaded
+		double amt = 0.6; // this seems to work pretty well in preventing it from being to anchory or spreaded
 		for(int i = 0;i<notePossibilities.length;i++){
-			System.out.println((i+1)+" is currently: "+notePossibilities[i]);
 			if(i==index)
 				notePossibilities[i] -= amt;
 			else
@@ -61,7 +60,7 @@ public class Index{
 			
 			// catches probabilities that may go negative;
 			if(notePossibilities[i]<=0){
-				notePossibilities[i] += 1;
+				notePossibilities[i] = 0.1;
 			}
 		}
 	}
@@ -73,7 +72,6 @@ public class Index{
 			temp[i] = sum;
 		}
 		double randProb = Math.random()*sum; // normalizing max to sum;
-		System.out.println(randProb);
 		for(int i = 0;i< in.length;i++){
 			if(randProb<temp[i]){
 				changeProb(findProbability(in[i]));
